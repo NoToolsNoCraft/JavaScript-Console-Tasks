@@ -44,17 +44,17 @@ console.log(sum); // Output: 15
 
 The eval() function can evaluate JavaScript code represented as a string, but this is not recommended due to security concerns.
 
-**let arr = [1, 2, 3, 4, 5];
+let arr = [1, 2, 3, 4, 5];
 let sum = eval(arr.join('+'));
-console.log(sum); // Output: 15**
+console.log(sum); // Output: 15
 
 6. Using reduceRight() Method
 
 reduceRight() works similarly to reduce() but processes the array from right to left.
 
-**let arr = [1, 2, 3, 4, 5];
+let arr = [1, 2, 3, 4, 5];
 let sum = arr.reduceRight((accumulator, currentValue) => accumulator + currentValue, 0);
-console.log(sum); // Output: 15**
+console.log(sum); // Output: 15
 
 7. Using map() and reduce() Combination
 
