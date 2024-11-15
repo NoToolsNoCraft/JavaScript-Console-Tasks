@@ -27,3 +27,43 @@ The expression now becomes '2' + 12.
 The + operator between a string and a number causes string concatenation. JavaScript converts 12 to a string and 
 concatenates it with '2', resulting in '212'.
 ================================================================================================================
+var a = 5
+console.log(a++)
+console.log(a)
+-----------------
+console.log(a++);
+
+Result: 5
+Explanation: The a++ is the post-increment operator. It returns the current value of a, then increments a by 1. 
+So, console.log(a++) will print 5, but a is now 6 internally after this line.
+-----------------
+console.log(a);
+
+Result: 6
+Explanation: By the time this line runs, a has already been incremented by the previous a++ operation. 
+Therefore, console.log(a) prints 6.
+================================================================================================================
+console.log(a+);
+The line console.log(a+) will throw a SyntaxError because + by itself is incomplete and doesn't form a valid expression.
+================================================================================================================
+console.log(typeof NaN)
+
+When you run console.log(typeof NaN);, it prints 'number' because NaN is technically classified as a numeric value, 
+even though it represents an invalid or undefined number.
+================================================================================================================
+console.log(NaN === NaN)
+
+Result: False
+NaN represents an invalid or undefined number, and the logic is that if a value is "not a number," 
+it shouldn't be equal to any value, including itself.
+================================================================================================================
+console.log(1 < 2 < 3)
+console.log(3 > 2 > 1)
+
+Result: True
+        False
+The reason 1 < 2 < 3 works as expected is because the comparison is between numbers, and the result (true) 
+is compared to 3 afterward.
+In 3 > 2 > 1, the first comparison results in true, but then true is treated as 1, which leads to the 
+unexpected result when compared to 1.
+================================================================================================================
