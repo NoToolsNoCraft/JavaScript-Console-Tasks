@@ -1,0 +1,29 @@
+console.log('5' + 3)
+
+Result: '53'
+Explanation: In this case, the + operator is used for string concatenation when one of the operands is a string. 
+JavaScript converts the number 3 to a string and concatenates it with '5', resulting in '53'.
+================================================================================================================
+console.log('5' - 3)
+
+Result: 2
+Explanation: The - operator triggers numeric coercion. JavaScript converts the string '5' to a number and then 
+performs the subtraction operation. Thus, 5 - 3 results in 2.
+================================================================================================================
+console.log(typeof ('5' + 3))
+
+Result: string
+================================================================================================================
+console.log(typeof ('5' - 3))
+
+Result: number
+================================================================================================================
+console.log('2' + 3 * 4)
+
+Result: '212'
+Explanation: This statement evaluates based on the operator precedence in JavaScript:
+Multiplication (*) has higher precedence than addition (+). So, 3 * 4 is evaluated first, resulting in 12.
+The expression now becomes '2' + 12.
+The + operator between a string and a number causes string concatenation. JavaScript converts 12 to a string and 
+concatenates it with '2', resulting in '212'.
+================================================================================================================
