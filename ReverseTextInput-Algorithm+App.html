@@ -1,0 +1,96 @@
+<!-- The app was created based on the following algorithm task example that
+ is commonly given during JavaScript interviews
+
+function reverseString(str) {
+    return str.split('').reverse().join('');
+}
+    console.log(reverseString(str))
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+
+        }
+
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50vw;
+
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        textarea {
+            width: 50vw;
+            height: 50vh;
+            font-size: large;
+            
+        }
+
+        textarea::placeholder {
+            font-size: large;
+        }
+
+        #return {
+            margin-top: 10px;
+            width: 20vw;
+            
+        }
+
+        #results {
+            background-color: aqua;
+            border: black solid 1px;
+            margin-top: 20px;
+            width: 50vw;
+            padding: 20px;
+        }
+
+    </style>
+
+</head>
+<div id="container">
+    <h1>Reverse any text</h1>
+    <textarea id="inputField" placeholder="Add your text here"></textarea>
+    <button id="return">Click here</button>
+    <div id="results"></div>
+</div>
+
+<script>
+    function reverseString() {
+        const input = document.getElementById("inputField").value;
+        const resultsContainer = document.getElementById("results");
+
+        if (!input) {
+            resultsContainer.innerHTML = "<p>Please update your input</p>";
+            return;
+        }
+
+        const results = input.split('').reverse().join(''); // Reverse the string
+        resultsContainer.innerHTML = results; // Display the reversed string
+    }
+
+    // Attach event listener to the button
+    document.getElementById("return").addEventListener("click", reverseString);
+</script>
+
+</body>
+</html>
