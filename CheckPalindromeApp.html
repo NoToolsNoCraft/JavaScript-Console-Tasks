@@ -1,0 +1,100 @@
+<!-- Reverse palindrome task example: 
+
+
+<script>
+        function palindrome(str) {
+        const reversed = str.split('').reverse().join('')
+        
+        if(str === reversed) {
+            return true
+        }
+        return false
+    }
+
+    console.log(palindrome('kayak'))
+
+</script>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container {
+            margin-top: 20vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40vw;
+            border: red solid 1px;
+            padding: 1vh;
+            height: 40vh;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 19px;
+        }
+        input {
+            width: 30vw;
+        }
+        button {
+            margin-top: 1vh;
+            width: 20vw;
+        }
+
+        #results {
+            background-color: bisque;
+            border: black solid 1px;
+            width: 30vw;
+            margin-top: 1vh;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <h1>Check if the word is a palindrome</h1>
+        <input type="text" id="input" placeholder="Add your palindrome here">
+        <button id="test">Click here</button>
+        <div id="results"></div>
+
+    </div>
+
+    <script>
+        function palindrome() {
+            const input = document.getElementById("input").value;
+            const reversed = input.split('').reverse().join('').toLowerCase();
+            const resultsContainer = document.getElementById("results");
+            
+            if (!input) {
+                resultsContainer.innerHTML = "<p>Please add your input</p>";
+                console.log("Please add your input")
+            } else if (input.toLowerCase() === reversed) {
+                resultsContainer.innerHTML = "<p>True</p>";
+                console.log(true)
+            } else {
+                resultsContainer.innerHTML = "<p>False</p>";
+                console.log(false)
+            }
+        }
+    
+        document.getElementById("test").addEventListener("click", palindrome);
+    </script>
+</body>
+</html>
