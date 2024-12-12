@@ -1,0 +1,141 @@
+<!-- Here is an example of a function I've used while creating this app.
+
+
+function maxChar(str) {
+    const charMap = {}; // Create an empty object to store character frequencies
+
+    // Loop through each character in the string
+    for (let char of str) {
+        if (charMap[char]) {
+            charMap[char] = charMap[char] + 1; // Increment the count if character already exists
+        } else {
+            charMap[char] = 1; // Initialize the count to 1 for new characters
+        }
+    }
+
+    // Loop through the entries of charMap to print key-value pairs
+    for (const [key, value] of Object.entries(charMap)) {
+        console.log(key, value); // Print each character and its frequency
+    }
+
+    return charMap;
+}
+
+// Call the function and log the output
+console.log(maxChar("abccccccd"));
+
+--> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Frequency</title>
+</head>
+
+<style>
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        margin: 20px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        max-width: 600px;
+        text-align: center;
+        display: flex;
+        flex-direction: column; /* Ensure items stack vertically */
+        align-items: center;   /* Center items horizontally */
+    }
+
+    textarea {
+        margin: 10px 0; /* Increase spacing */
+        padding: 20px; /* Increase padding for larger clickable/input area */
+        width: 50vw; 
+        font-size: 20px; /* Increase font size */
+        resize: both; 
+        height: 50vh; /* Set a larger default height */
+    }
+
+    button {
+        margin-top: 15px; /* Increase spacing from textarea */
+        padding: 15px 30px; /* Increase padding for larger button size */
+        font-size: 18px; /* Increase font size */
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        width: 40vw; 
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #results {
+        margin-top: 25px; /* Increase spacing */
+        padding: 20px; /* Add more padding for readability */
+        background-color: #f6ffd5;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        max-height: 400px; /* Allow for more content to show before scrolling */
+        overflow-y: auto;
+        width: 50vw; 
+        font-size: 18px; /* Increase font size for results */
+    }
+</style>
+<body>
+
+<div class="container">
+    <h2>Character counter</h2>
+    <textarea id="inputField" placeholder="Put your text here"></textarea>
+    <button id="run">Run the app</button>
+    <div id="results"></div>
+</div> 
+
+
+    <script>
+        function maxChar() {
+            const charMap = {}; // Create an empty object to store character frequencies
+            const input = document.getElementById("inputField").value;  
+            const resultsContainer = document.getElementById("results");
+
+            // Check if input is empty
+            if (!input) {
+                resultsContainer.innerHTML = "<p>Please add your text in the input field</p>";
+                console.log("Input field is empty");
+                return;
+            }
+
+            let results = ""; // Initialize results as an empty string
+
+            // Loop through each character in the string
+            for (let char of input) {
+                if (charMap[char]) {
+                    charMap[char]++; // Increment the count if character already exists
+                } else {
+                    charMap[char] = 1; // Initialize the count to 1 for new characters
+                }
+            }
+
+            // Loop through the entries of charMap to build results and log to console
+            for (const [key, value] of Object.entries(charMap)) {
+                results += `<p>${key}: ${value}</p>`;
+                console.log(`${key}: ${value}`); // Print each character and its frequency
+            }
+
+            // Display the results in the resultsContainer
+            resultsContainer.innerHTML = results;
+        }
+
+        // Attach the maxChar function to the button click
+        document.getElementById("run").addEventListener("click", maxChar);
+    </script>
+</body>
+</html>
